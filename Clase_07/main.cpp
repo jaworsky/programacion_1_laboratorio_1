@@ -1,14 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define TAM 3
+#define TAM 5
 
 void mostrar(char vec[][20], int tam );
 
 void ordenarPromedio(int legajos[], int pp[], int sp[], float promedios[],char nombres [][20], char sexo[], int tam );
 
+
+void ordenarporcriterios(int legajos[], int pp[], int sp[], float promedios[],char nombres [][20], char sexo[], int tam );
+
 int main()
 {
+/*
 
 int legajos[TAM];
 int pp[TAM];
@@ -20,21 +24,22 @@ char sexo[TAM];
 int autoLeg=1200;
 
 
-
+/*
 for(int i=0;i<TAM;i++)
 {
-   /* printf("Ingrese el nombre: \n");
+    printf("Ingrese el nombre: \n");
     fflush(stdin);
     gets(nombres[i]);
-   */
+
 
    legajos[i]=autoLeg; // autoincrementamos el legajo.
    autoLeg++;
 
-    printf("Ingrese el legajo: \n");
+    /*printf("Ingrese el legajo: \n");
     fflush(stdin);
     scanf("%d",&legajos[i]);
-
+    */
+/*
     printf("Ingrese el sexo: \n");
     fflush(stdin);
     scanf("%c",&sexo[i]);
@@ -54,6 +59,18 @@ for(int i=0;i<TAM;i++)
     system("cls");
 
 }
+*/
+
+
+
+int legajos[TAM]={1,2,3,4,5};
+int pp[TAM]={3,5,6,8,7};
+int sp[TAM]={5,6,8,9,4};
+float promedios[TAM]={4,5.5,7,8.5,5.5};
+char nombres [] [20]={"FACU","BARBARA","MILI","ELISEO","PEDRO"};
+char sexo[TAM]={'m','f','f','m','m'};
+
+
 
 for(int i=0;i<TAM;i++)
 {
@@ -61,11 +78,23 @@ for(int i=0;i<TAM;i++)
 
 }
 
+printf("\n\n");
+
 ordenarPromedio(legajos,pp,sp,promedios,nombres,sexo,TAM);
 
 for(int i=0;i<TAM;i++)
 {
-    printf("legajo: %d  nombre: %s  pp: %d   sp: %d promedio: %2.f sexo:%c\n",legajos[i],nombres[i],pp[i],sp[i],promedios[i],sexo[i]);
+    printf("legajo: %d  nombre: %s  pp: %d   sp: %d promedio: %.2f sexo:%c\n",legajos[i],nombres[i],pp[i],sp[i],promedios[i],sexo[i]);
+
+}
+
+ordenarporcriterios(legajos,pp,sp,promedios,nombres,sexo,TAM);
+
+printf("\n\n");
+
+for(int i=0;i<TAM;i++)
+{
+    printf("legajo: %d  nombre: %s  pp: %d   sp: %d promedio: %.2f sexo:%c\n",legajos[i],nombres[i],pp[i],sp[i],promedios[i],sexo[i]);
 
 }
 
@@ -137,7 +166,7 @@ void ordenarPromedio(int legajos[], int pp[], int sp[], float promedios[],char n
 
 
 
-void ordenarporcriterios
+void ordenarporcriterios(int legajos[], int pp[], int sp[], float promedios[],char nombres [][20], char sexo[], int tam )
 
 {
     int j;
