@@ -1,20 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define A 3
-
-
-typedef struct // definimos la estructura, con los diferentes tipos de variables.
-{
-    int legajo;
-    char nombre[30];
-    float promedio;
-    int edad;
-
-}sAlumno; //definimos nombre de la estructura
-
-
-void mostrarUnAlumno(sAlumno);
-sAlumno pedirAlumno(); // una funcion puede devolver una estructura.
+#include <string.h>
+#include "alumno.h"
+#define A 2
 
 
 int main()
@@ -26,6 +14,15 @@ int main()
 
     int i;
 
+/*
+    for(i=0;i<A;i++) // le guardo el alumno en la posicion del array.
+    {
+        listadoMain[i]=pedirAlumno();
+
+    }
+
+
+/*
     for(i=0;i<A;i++) // carga secuencial del vector de alumnos
     {
     printf("Ingrese legajo: \n");
@@ -71,39 +68,27 @@ int main()
 
 
    // miAlumno = pedirAlumno(); // le asignamos la copia del valor a mi alumno.
-
+/*
     for(i=0;i<A;i++) // barrido para mostrar el vector alumnos
    {
          mostrarUnAlumno(listadoMain[i]);//puede variar el que le paso
    }
+*/
 
+cargarListadoDeAlumnos(listadoMain,A);
+mostrarListadoDeAlumnos(listadoMain,A);
+
+printf("Ordenar \n");
+
+ordenarAlumnosPorNombre(listadoMain, A);
+
+mostrarListadoDeAlumnos(listadoMain,A);
 
     return 0;
 }
 
-void mostrarUnAlumno(sAlumno miAlumno) // siemrpe le voy a pasar un alumno
-{
-    printf("%d--%s--%.2f--%d\n",miAlumno.legajo,miAlumno.nombre,miAlumno.promedio,miAlumno.edad);
-}
 
-sAlumno pedirAlumno()
-{
-    sAlumno alumnito; // alumno local de la funcion
+// cada opcion que se pida, ponerl odentro de una opcion del menu
 
-    printf("Ingrese legajo: \n");
-    scanf("%d", &alumnito.legajo); //se le pasa la variable indicando la posicion de memoria.
-
-    printf("Ingrese el nombre: \n");
-    fflush(stdin);
-    gets(alumnito.nombre);
-
-    printf("Ingrese el promedio: \n");
-    scanf("%f",&alumnito.promedio);
-
-    printf("Ingrese edad: \n");
-    scanf("%d",&alumnito.edad);
-
-    return alumnito; // devuelve una copia de estos valores.
-
-}
-
+// menu de opciones con carga aleatoria, preg al usuario donde kiere guardar.
+//pensar la modificacion,  // graficos de barra con C con *, vertical.
