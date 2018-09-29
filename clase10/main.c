@@ -21,6 +21,9 @@ void mostrarEmplados(eEmpleado lista[], int tam);
 int buscarLibre(eEmpleado lista[],int tam);
 int buscarEmpleado(eEmpleado lista[], int tam, int legajo);
 void altaEmpleado(eEmpleado lista[], int tam);
+void bajaEmpleado(eEmpleado lista[], int tam);
+void modificarEmpleado(eEmpleado lista[], int tam);
+
 
 int main()
 {
@@ -38,10 +41,11 @@ do
     case 1:
 
     printf("1.Alta\n\n");
-    altaEmpleado(empleados, TAM);
+    altaEmpleado(empleados,TAM);
     break;
     case 2:
     printf("2.Baja\n\n");
+    bajaEmpleado(empleados,TAM);
     system("pause");
     break;
     case 3:
@@ -235,6 +239,95 @@ void altaEmpleado(eEmpleado lista[], int tam)
 
         }
     }
+}
+
+//
+
+void bajaEmpleado(eEmpleado lista[], int tam)
+{
+
+int legajo;
+int indice;
+char seguir;
+
+    printf("Ingrese el legajo: \n");
+    scanf("%d",&legajo);
+
+    indice = buscarEmpleado(lista,tam,legajo);
+    if(indice==-1)
+    {
+        printf("No existe ese empleado!\n");
+        system("pause");
+    }
+    else
+    {
+        mostrarEmpleado(lista[indice]);
+
+        printf("¿confirma borrado? s/n: \n");
+        fflush(stdin);
+        scanf("%c",&seguir);
+
+        if(seguir=='n')
+        {
+            printf("Baja cancelada! \n");
+        }
+        else
+        {
+            lista[indice].isEmpty=1;
+            printf("Borrado Exitoso!\n");
+        }
+        system("pause");
+
+    }
+
+
+}
+// para modificar !
+
+void modificarEmpleado(eEmpleado lista[], int tam)
+{
+
+int legajo;
+int indice;
+char seguir;
+float sueldo;
+
+    printf("Ingrese el legajo: \n");
+    scanf("%d",&legajo);
+
+    indice = buscarEmpleado(lista,tam,legajo);
+    if(indice==-1)
+    {
+        printf("No existe ese empleado!\n");
+        system("pause");
+    }
+    else
+    {
+        mostrarEmpleado(lista[indice]);
+
+        printf("Ingrese el sueldo a modificar: \n");
+        fflush(stdin);
+        scanf("%f",&sueldo)
+
+
+        printf("¿confirma modificacion? s/n: \n");
+        fflush(stdin);
+        scanf("%c",&seguir);
+
+        if(seguir=='n')
+        {
+            printf("Modificacio cancelada! \n");
+        }
+        else
+        {
+            lista[indice].isEmpty=1;
+            printf("Borrado Exitoso!\n");
+        }
+        system("pause");
+
+    }
+
+
 }
 
 
