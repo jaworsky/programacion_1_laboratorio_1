@@ -331,7 +331,7 @@ int acumPizza=0;
 int acumEnsalada=0;
 int acumPescado=-1;
 int acumLasagna=0;
-
+int indice;
 
 for(int i=0;i<tama;i++)
 {
@@ -341,12 +341,10 @@ for(int i=0;i<tama;i++)
         case 1:
         acumMilanesa=acumMilanesa+1;
 
-        for(int i=0;i<tame;i++)
-        {
-            if(a[i].idEmp==e[i].legajo)
+        indice=buscarEmpleado(e,tame,a[i].idEmp); //busco el indice donde esta el empleado para mostrarlo!!
 
-           mostrarEmpleado(e[i],s,tams);
-        }
+        mostrarEmpleado(e[indice],s,tams);
+
 
         break;
         case 2:

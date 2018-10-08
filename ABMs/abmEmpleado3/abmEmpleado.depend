@@ -35,3 +35,17 @@
 	<stdlib.h>
 	<string.h>
 
+1539012202 source:c:\users\xxjotaa\desktop\programacion_1_laboratorio_1\abms\abmempleado3\empleado.c
+	"empleado.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1538940811 c:\users\xxjotaa\desktop\programacion_1_laboratorio_1\abms\abmempleado3\empleado.h
+
+1539022362 source:c:\users\xxjotaa\desktop\programacion_1_laboratorio_1\abms\abmempleado3\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"empleado.h"
+
