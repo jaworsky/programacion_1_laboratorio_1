@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1539044032 source:d:\jaworsky.ariel.1g\parcial1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
