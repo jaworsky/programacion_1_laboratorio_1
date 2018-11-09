@@ -4,6 +4,7 @@
 #include "validaciones.h"
 #include "clientes.h"
 #include "alquileres.h"
+#include "juegos.h"
 
 void inicializarClientes(eClientes lista[], int tam)
 {
@@ -295,31 +296,37 @@ int menu()
         printf("\n*** Bienvenido!!***\n");
         printf("\n*** Menu de opciones ***\n\n\n");
         printf("1-Alta Cliente\n");
-        printf("2-Modificar Datos\n");
-        printf("3-Baja de Cliente\n");
+        printf("2-Baja de Cliente\n");
+        printf("3-Modificar Datos\n");
         printf("4-Listar\n"); // en este caso, informar los 2 puntos
         printf("5-Alta Alquiler\n");
         printf("6-Mostrar Alquileres\n");
-        printf("7-Mostrar Juegos de categoria mesa\n");
-        printf("8-Mostrar Alquileres por cliente\n");
-        printf("9-Mostrar importe por cliente\n");
-        printf("10-Mostrar Clientes que alquilaron un determinado juego\n");
-        printf("11-Salir\n");
+        printf("7-Alta Juegos\n");
+        printf("8-Baja Juegos\n");
+        printf("9-Modificar Juegos\n");
+
+
+        printf("10-Mostrar Juegos de categoria mesa\n");
+        printf("11-Mostrar Alquileres por cliente\n");
+        printf("12-Mostrar importe por cliente\n");
+        printf("13-Mostrar Clientes que alquilaron un determinado juego\n");
+        printf("14-Mostrar Clientes que no alquilaron\n");
+        printf("20-Salir\n");
 
 
         while(!function_getStringNumeros("Ingrese la opcion deseada: \n",auxOpcion))
         {
             {
-            printf("Error ingrese una opcion numerica del 1 al 11\n.");
+            printf("Error ingrese una opcion numerica del 1 al 20\n.");
             system("pause");
             fflush(stdin);
             }
         }
             opcion=atoi(auxOpcion);
 
-            if(opcion<1 || opcion>11)
+            if(opcion<1 || opcion>20)
             {
-            printf("Error ingrese una opcion numerica del 1 al 7\n.");
+            printf("Error ingrese una opcion numerica del 1 al 20\n.");
             system("pause");
             fflush(stdin);
             }
@@ -327,40 +334,8 @@ int menu()
     return opcion;
 }
 //
-void hardCordearJuegos(eJuegos juegos[], int tamjuegos)
-{
-    eJuegos juegosstock[]=
-    {
-        {1, "juego de accion", 50 ,4},
-        {2, "juego de magia", 100,5 },
-        {3, "juego de estrategia en tiempo real", 125,3},
-        {4, "juego de sumas y restas", 150,1},
-        {5, "juego de suerte", 10,2},
-        {6, "juego para multiplicar" , 25,1},
-        {7, "juego de pelea", 75,4},
-        {8, "juego de baile", 150,4},
-        {9, "juego de ingenio", 200,1},
-        {10, "juegos de resolver problemas", 250,1}
-    };
 
-    for(int i=0; i < tamjuegos; i++)
-    {
-        juegos[i] = juegosstock[i];
-    }
-}
-//
-void listarJuegos(eJuegos arraydejuegos[], int tamj)
-{
 
-    printf("Descripcion\n\n");
-    for(int i=0; i< tamj; i++)
-    {
-        printf("codigo: %d descpripcion: %10s \n ID Categoria: %d importe: %d \n\n", arraydejuegos[i].codigo, arraydejuegos[i].descripcion,arraydejuegos[i].idCategoria,arraydejuegos[i].importe);
-
-    }
-    printf("\n\n");
-}
-//
 void hardCordearClientes(eClientes arraydeclientes[], int tamclientes)
 {
     eClientes hardCodeoCliente[]=

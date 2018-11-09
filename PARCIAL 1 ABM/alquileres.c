@@ -3,6 +3,7 @@
 #include "validaciones.h"
 #include "clientes.h"
 #include "alquileres.h"
+#include "juegos.h"
 
 
 void inicializarAlquileres(eAlquileres lista[], int tam)

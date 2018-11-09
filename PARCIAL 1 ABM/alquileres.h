@@ -16,6 +16,8 @@ int isEmpty;
 }eAlquileres;
 
 
+
+
 void inicializarAlquileres(eAlquileres lista[], int tam);
 
 int buscarLibreAlquileres(eAlquileres arraydealquileres[], int tama);

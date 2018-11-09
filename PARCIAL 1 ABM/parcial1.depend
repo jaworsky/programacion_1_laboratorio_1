@@ -176,3 +176,54 @@
 	"validaciones.h"
 	"clientes.h"
 
+1541776317 source:c:\users\xxjotaalap\desktop\prueba\programacion_1_laboratorio_1\parcial 1 abm\alquileres.c
+	<stdio.h>
+	<stdlib.h>
+	"validaciones.h"
+	"clientes.h"
+	"alquileres.h"
+	"juegos.h"
+
+1541778256 c:\users\xxjotaalap\desktop\prueba\programacion_1_laboratorio_1\parcial 1 abm\validaciones.h
+
+1541781201 c:\users\xxjotaalap\desktop\prueba\programacion_1_laboratorio_1\parcial 1 abm\clientes.h
+
+1541776908 c:\users\xxjotaalap\desktop\prueba\programacion_1_laboratorio_1\parcial 1 abm\alquileres.h
+
+1541781022 source:c:\users\xxjotaalap\desktop\prueba\programacion_1_laboratorio_1\parcial 1 abm\clientes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+	"clientes.h"
+	"alquileres.h"
+	"juegos.h"
+
+1541781340 source:c:\users\xxjotaalap\desktop\prueba\programacion_1_laboratorio_1\parcial 1 abm\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"clientes.h"
+	"validaciones.h"
+	"alquileres.h"
+	"juegos.h"
+
+1541778240 source:c:\users\xxjotaalap\desktop\prueba\programacion_1_laboratorio_1\parcial 1 abm\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	"validaciones.h"
+	"clientes.h"
+	"juegos.h"
+	"alquileres.h"
+
+1541780586 source:c:\users\xxjotaalap\desktop\prueba\programacion_1_laboratorio_1\parcial 1 abm\juegos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+	"clientes.h"
+	"juegos.h"
+	"alquileres.h"
+
+1541777054 c:\users\xxjotaalap\desktop\prueba\programacion_1_laboratorio_1\parcial 1 abm\juegos.h
+

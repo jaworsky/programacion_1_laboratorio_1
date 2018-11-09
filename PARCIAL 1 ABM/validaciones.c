@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include "validaciones.h"
 #include "clientes.h"
+#include "juegos.h"
+#include "alquileres.h"
 
 int function_esTelefono(char msj[],char str[])
 {
@@ -51,6 +53,13 @@ int function_getInt(char msj[] )
     printf("%s",msj);
     scanf("%d",&resultado);
     return resultado;
+}
+//
+int function_getInt2(char msj[],int aux )
+{
+    printf("%s",msj);
+    scanf("%d",&aux);
+    return aux;
 }
 //
 char function_getChar(char msj[])

@@ -1,4 +1,6 @@
 
+
+
 float getFloat(char msj[]);
 
 /** \brief Pide un entero y lo devuelve.
@@ -18,6 +20,8 @@ int function_getInt(char msj[] );
  * \return Devuelve el caracter ingresado.
  *
  */
+
+int function_getInt2(char msj[],int aux );
 
 char function_getChar(char msj[]);
 
