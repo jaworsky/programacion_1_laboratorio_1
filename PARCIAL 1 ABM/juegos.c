@@ -141,7 +141,19 @@ int buscarJuego(eJuegos arrayDeJuegos[], int tamj, int codigo)//devuelvo el indi
 
 }
 //
+void juegosCategoriaMesa(eJuegos arrayDeJuegos[],int tamj)
+{
+    for(int i=0; i<tamj; i++)
+    {
+        if(arrayDeJuegos[i].idCategoria==1)
+        {
+            mostrarJuegoDeCatMesa(arrayDeJuegos[i]);
+        }
 
+    }
+
+}
+//
 void mostrarJuego (eJuegos juegoAmostrar)
 {
     printf("el id del juego es: %d , la descripcion es: %s , el importe: %d , categoria: %d  \n",juegoAmostrar.codigo,juegoAmostrar.descripcion,juegoAmostrar.idCategoria,juegoAmostrar.importe);

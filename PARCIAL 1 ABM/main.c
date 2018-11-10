@@ -10,6 +10,7 @@
 #include "alquileres.h"
 #include "juegos.h"
 
+int menu();
 void mostrarJuego(eJuegos juegoAmostrar);
 void juegosCategoriaMesa(eJuegos arrayDeJuegos[],int tamj);
 void alquileresXcliente(eAlquileres arrayDeAlquileres[], int tama,eClientes arrayDeClientes[],int tamc,eJuegos arraDeJuegos[],int tamj);
@@ -160,21 +161,56 @@ int main()
 
     return 0;
 }
+//
+int menu()
+{
+        char auxOpcion[10];
+        int opcion;
 
+        system("cls");
+        printf("\n*** Bienvenido!!***\n");
+        printf("\n*** Menu de opciones ***\n\n\n");
+        printf("1-Alta Cliente\n");
+        printf("2-Baja de Cliente\n");
+        printf("3-Modificar Datos\n");
+        printf("4-Listar\n"); // en este caso, informar los 2 puntos
+        printf("5-Alta Alquiler\n");
+        printf("6-Mostrar Alquileres\n");
+        printf("7-Alta Juegos\n");
+        printf("8-Baja Juegos\n");
+        printf("9-Modificar Juegos\n");
+
+
+        printf("10-Mostrar Juegos de categoria mesa\n");
+        printf("11-Mostrar Alquileres por cliente\n");
+        printf("12-Mostrar importe por cliente\n");
+        printf("13-Mostrar Clientes que alquilaron un determinado juego\n");
+        printf("14-Mostrar Clientes que no alquilaron\n");
+        printf("20-Salir\n");
+
+
+        while(!function_getStringNumeros("Ingrese la opcion deseada: \n",auxOpcion))
+        {
+            {
+            printf("Error ingrese una opcion numerica del 1 al 20\n.");
+            system("pause");
+            fflush(stdin);
+            }
+        }
+            opcion=atoi(auxOpcion);
+
+            if(opcion<1 || opcion>20)
+            {
+            printf("Error ingrese una opcion numerica del 1 al 20\n.");
+            system("pause");
+            fflush(stdin);
+            }
+
+    return opcion;
+}
 
 //
-void juegosCategoriaMesa(eJuegos arrayDeJuegos[],int tamj)
-{
-    for(int i=0; i<tamj; i++)
-    {
-        if(arrayDeJuegos[i].idCategoria==1)
-        {
-            mostrarJuegoDeCatMesa(arrayDeJuegos[i]);
-        }
 
-    }
-
-}
 //
 void mostrarJuegoDeCatMesa(eJuegos juegoAmostrar)
 {
@@ -291,7 +327,7 @@ void clientesQueNoAlquilan(eAlquileres arrayDeAlquileres[], int tama,eClientes a
             {5,4,1,{1,1,2018},0}
         };
 
-        for(int i=0; i < 5; i++)
+          for(int i=0; i < 5; i++)
         {
             arraydealquileres[i] = hardCodeoAlquiler[i];
         }

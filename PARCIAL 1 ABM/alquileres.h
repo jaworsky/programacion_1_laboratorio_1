@@ -1,3 +1,10 @@
+#ifndef ALQUILERES_H_INCLUDED
+#define ALQUILERES_H_INCLUDED
+#include "validaciones.h"
+#include "clientes.h"
+#include "alquileres.h"
+#include "juegos.h"
+
 typedef struct
 {
 int dia;
@@ -17,7 +24,6 @@ int isEmpty;
 
 
 
-
 void inicializarAlquileres(eAlquileres lista[], int tam);
 
 int buscarLibreAlquileres(eAlquileres arraydealquileres[], int tama);
@@ -27,3 +33,5 @@ void mostrarAlquileres(eAlquileres arraydealquileres[], int tama);
 void mostrarAlquiler (eAlquileres alquilerAmostrar);
 
 void altaAlquiler(eAlquileres arraydealquileres[],int tama ,eClientes arraydeclientes[], int tamc,eJuegos arraydejuegos[],int tamj,eCategoria arraydecategorias[],int tamcat, int* pId);
+
+#endif // ALQUILERES_H_INCLUDED

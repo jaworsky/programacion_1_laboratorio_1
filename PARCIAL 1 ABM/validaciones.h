@@ -1,5 +1,10 @@
+#ifndef VALIDACIONES_H_INCLUDED
+#define VALIDACIONES_H_INCLUDED
 
-
+#include "clientes.h"
+#include "validaciones.h"
+#include "alquileres.h"
+#include "juegos.h"
 
 float getFloat(char msj[]);
 
@@ -105,3 +110,4 @@ int function_getStringLetras(char msj[],char input[]);
 
   int function_getStringNumeros(char msj[],char input[]);
 
+  #endif // VALIDACIONES_H_INCLUDED
