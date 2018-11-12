@@ -5,6 +5,7 @@
 #include "juegos.h"
 #include "clientes.h"
 #include "alquileres.h"
+#include "informes.h"
 
 
 void inicializarClientes(eClientes lista[], int tam)

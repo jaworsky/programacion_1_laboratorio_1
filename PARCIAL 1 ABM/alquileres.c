@@ -4,6 +4,7 @@
 #include "clientes.h"
 #include "alquileres.h"
 #include "juegos.h"
+#include "informes.h"
 
 
 void inicializarAlquileres(eAlquileres lista[], int tam)
@@ -108,6 +109,68 @@ void altaAlquiler(eAlquileres arraydealquileres[],int tama ,eClientes arraydecli
 
 }
 ////
+
+void bajaAlquiler(eAlquileres listado[], int tam)
+{
+
+int id;
+char auxId[10];
+int indice;
+char seguir;
+
+   while(!function_getStringNumeros("Ingrese el ID del alquiler a eliminar: ",auxId))
+    {
+        printf("Error ingrese un ID numerico\n.");
+        break;
+    }
+
+    id=atoi(auxId);
+
+    indice = buscarAlquiler(listado,tam,id);
+
+    if(indice==-1)
+    {
+        printf("No existe ese alquiler en nuestro sistema!\n");
+        system("pause");
+    }
+    else
+    {
+        mostrarAlquiler(listado[indice]);
+        seguir=function_getChar("Esta seguro de borrar este alquiler? s/n: \n");
+
+        if(seguir=='s')
+        {
+            listado[indice].isEmpty=1;
+            printf("Borrado Exitoso!!!\n");
+        }
+        else
+        {
+            printf("Baja cancelada, recuerde ingresar 's' para borrar el alquiler! \n");
+        }
+        system("pause");
+    }
+}
+//
+int buscarAlquiler(eAlquileres lista[], int tam, int codigo)//devuelvo el indice del cliente.
+{
+    int indice = -1;
+
+    for(int i=0; i < tam; i++)
+    {
+
+        if( lista[i].codigoDeAlquiler == codigo && lista[i].isEmpty == 0)
+        {
+            indice = i;
+            break;
+        }
+    }
+    return indice;
+
+}
+//
+
+
+//
 /*
 int juegosMasAlquileres(eAlquileres* listaAlquileres, int lenAlquileres, eJuegos* listaJuegos,int lenJuegos)
 {

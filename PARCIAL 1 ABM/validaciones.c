@@ -4,6 +4,7 @@
 #include "clientes.h"
 #include "juegos.h"
 #include "alquileres.h"
+#include "informes.h"
 
 int function_esTelefono(char msj[],char str[])
 {

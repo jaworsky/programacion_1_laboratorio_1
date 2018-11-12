@@ -22,7 +22,7 @@ int isEmpty;
 
 }eAlquileres;
 
-
+void bajaAlquiler(eAlquileres listado[], int tam);
 
 void inicializarAlquileres(eAlquileres lista[], int tam);
 

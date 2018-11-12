@@ -9,9 +9,10 @@
 #include "validaciones.h"
 #include "alquileres.h"
 #include "juegos.h"
+#include "informes.h"
 
 int menu();
-void mostrarJuego(eJuegos juegoAmostrar);
+
 void juegosCategoriaMesa(eJuegos arrayDeJuegos[],int tamj);
 void alquileresXcliente(eAlquileres arrayDeAlquileres[], int tama,eClientes arrayDeClientes[],int tamc,eJuegos arraDeJuegos[],int tamj);
 
@@ -95,7 +96,14 @@ int main()
 
             break;
 
-        case 6: //Mostrar Alquileres
+        case 6: //Baja alquiler
+
+
+
+
+            break;
+
+        case 8: //Mostrar Alquileres
 
             if(flagAlquiler=0)
             {
@@ -105,58 +113,70 @@ int main()
 
             }
 
-            mostrarAlquileres2(listaDeAlquileres,TAMA,listaDeClientes,TAMC,listaDeJuegos,TAMJ);
+            mostrarPrueba1(listaDeAlquileres,TAMA,listaDeClientes,TAMC,listaDeJuegos,TAMJ);
             system("pause");
 
             break;
 
-        case 7: // Alta juegos
+        case 9: // Alta juegos
 
             altaJuegos(listaDeJuegos,TAMJ);
 
             break;
 
-        case 10: //jeugos de categoria mesa
+        case 10: // Baja juegos
+
+           bajaJuegos(listaDeJuegos,TAMJ);
+
+            break;
+
+        case 11: // Modifica juegos
+
+           modificaJuego(listaDeJuegos,TAMJ);
+
+            break;
+
+        case 12: //jeugos de categoria mesa
             listarJuegos(listaDeJuegos,TAMJ);
             juegosCategoriaMesa(listaDeJuegos,TAMJ);
             system("pause");
             break;
 
-        case 11://alquileres efectuados por algun cliente seleccionado.
+        case 13://alquileres efectuados por algun cliente seleccionado.
 
             alquileresXcliente(listaDeAlquileres,TAMA,listaDeClientes,TAMC,listaDeJuegos,TAMJ);
             system("pause");
 
             break;
 
-        case 12: //importe por cliente
+        case 14: //importe por cliente
 
             importeXcliente(listaDeAlquileres,TAMA,listaDeClientes,TAMC,listaDeJuegos,TAMJ);
             system("pause");
 
             break;
 
-        case 13: //juego x cliente
+        case 15: //juego x cliente
 
             juegoXcliente(listaDeAlquileres,TAMA,listaDeClientes,TAMC,listaDeJuegos,TAMJ);
             system("pause");
 
             break;
 
-        case 14:
+        case 16:
 
             clientesQueNoAlquilan(listaDeAlquileres,TAMA,listaDeClientes,TAMC);
 
             break;
 
-        case 20 :
-            opcion=20;
+        case 30 : // salir
+            opcion=30;
             break;
 
         }
 
     }
-    while(opcion!=20);
+    while(opcion!=30);
 
 
     return 0;
@@ -172,36 +192,38 @@ int menu()
         printf("\n*** Menu de opciones ***\n\n\n");
         printf("1-Alta Cliente\n");
         printf("2-Baja de Cliente\n");
-        printf("3-Modificar Datos\n");
+        printf("3-Modificar Cliente\n");
         printf("4-Listar\n"); // en este caso, informar los 2 puntos
         printf("5-Alta Alquiler\n");
-        printf("6-Mostrar Alquileres\n");
-        printf("7-Alta Juegos\n");
-        printf("8-Baja Juegos\n");
-        printf("9-Modificar Juegos\n");
+        printf("6-Baja Alquileres\n");
+        printf("7-Modificar Alquileres\n");
+        printf("8-Mostrar Alquileres\n");
+        printf("9-Alta Juegos\n");
+        printf("10-Baja Juegos\n");
+        printf("11-Modificar Juegos\n");
+        printf("12-Mostrar Juegos de categoria mesa\n");
+        printf("13-Mostrar Alquileres por cliente\n");
+        printf("14-Mostrar importe por cliente\n");
+        printf("15-Mostrar Clientes que alquilaron un determinado juego\n");
+        printf("16-Mostrar Clientes que no alquilaron\n");
 
 
-        printf("10-Mostrar Juegos de categoria mesa\n");
-        printf("11-Mostrar Alquileres por cliente\n");
-        printf("12-Mostrar importe por cliente\n");
-        printf("13-Mostrar Clientes que alquilaron un determinado juego\n");
-        printf("14-Mostrar Clientes que no alquilaron\n");
-        printf("20-Salir\n");
+        printf("30-Salir\n");
 
 
         while(!function_getStringNumeros("Ingrese la opcion deseada: \n",auxOpcion))
         {
             {
-            printf("Error ingrese una opcion numerica del 1 al 20\n.");
+            printf("Error ingrese una opcion numerica del 1 al 30\n.");
             system("pause");
             fflush(stdin);
             }
         }
             opcion=atoi(auxOpcion);
 
-            if(opcion<1 || opcion>20)
+            if(opcion<1 || opcion>30)
             {
-            printf("Error ingrese una opcion numerica del 1 al 20\n.");
+            printf("Error ingrese una opcion numerica del 1 al 30\n.");
             system("pause");
             fflush(stdin);
             }
@@ -232,7 +254,7 @@ void alquileresXcliente(eAlquileres arrayDeAlquileres[], int tama,eClientes arra
     {
         if(arrayDeAlquileres[i].codigoDeCliente==auxCodCliente && arrayDeAlquileres[i].isEmpty==0)
         {
-            mostrarAlquiler2(arrayDeAlquileres[i],arrayDeClientes[i],arrayDeJuegos[i]);
+            mostrarPrueba2(arrayDeAlquileres[i],arrayDeClientes,tamc,arrayDeJuegos,tamj);
 
 
             flag = 1;
@@ -302,9 +324,9 @@ void clientesQueNoAlquilan(eAlquileres arrayDeAlquileres[], int tama,eClientes a
             if(arrayDeAlquileres[i].codigoDeJuego==auxCodDeJuego && arrayDeAlquileres[i].isEmpty==0)
             {
              auxCliente=buscarCliente(arrayDeClientes,tamc,arrayDeAlquileres[i].codigoDeCliente);
-            // mostrarCliente(arrayDeClientes[auxCliente]);
-                //index=arrayDeAlquileres[i].codigoDeCliente-1;
-                mostrarCliente(arrayDeClientes[index]);
+            mostrarCliente(arrayDeClientes[auxCliente]);
+             //   index=arrayDeAlquileres[i].codigoDeCliente-1;
+              //  mostrarCliente(arrayDeClientes[index]);
                 flag = 1;
             }
         }
@@ -336,7 +358,7 @@ void clientesQueNoAlquilan(eAlquileres arrayDeAlquileres[], int tama,eClientes a
     void importeXcliente(eAlquileres arrayDeAlquileres[], int tama,eClientes arrayDeClientes[],int tamc,eJuegos arrayDeJuegos[],int tamj)
     {
         int auxCodCliente;
-        int deuda;
+        int deuda=0;
 
         mostrarClientes(arrayDeClientes,tamc);
         auxCodCliente=function_getInt("Ingrese el codigo del cliente: \n\n");
@@ -350,9 +372,9 @@ void clientesQueNoAlquilan(eAlquileres arrayDeAlquileres[], int tama,eClientes a
         {
             if(arrayDeAlquileres[i].codigoDeCliente==auxCodCliente && arrayDeAlquileres[i].isEmpty==0)
             {
-                mostrarAlquiler2(arrayDeAlquileres[i],arrayDeClientes[i],arrayDeJuegos[i]);
 
-                deuda=arrayDeJuegos[i].importe;
+
+                deuda=deuda+arrayDeJuegos[i].importe;
 
                 flag = 1;
             }
@@ -367,10 +389,10 @@ void clientesQueNoAlquilan(eAlquileres arrayDeAlquileres[], int tama,eClientes a
         printf("\n\n");
     }
 //
-    void mostrarAlquiler2 (eAlquileres alquilerAmostrar, eClientes clienteAmostrar,eJuegos juegoAmostrar)
+    void mostrarAlquiler2 (eAlquileres alquilerAmostrar, eClientes clienteAmostrar,eJuegos juegoAmostrar, char* auxName)
     {
 
-        printf("\ncodigo de alquiler: %d  codigo de juego: %d \n descripcion: %s \n codigo de cliente: %d , fecha:  %02d/%02d/%d\n  nombre: %s\n",alquilerAmostrar.codigoDeAlquiler,alquilerAmostrar.codigoDeJuego,juegoAmostrar.descripcion,alquilerAmostrar.codigoDeCliente,alquilerAmostrar.fecha.dia,alquilerAmostrar.fecha.mes,alquilerAmostrar.fecha.anio,clienteAmostrar.nombre);
+        printf("\ncodigo de alquiler: %d  codigo de juego: %d \n descripcion: %s \n codigo de cliente: %d , fecha:  %02d/%02d/%d\n  nombre: %s\n",alquilerAmostrar.codigoDeAlquiler,alquilerAmostrar.codigoDeJuego,juegoAmostrar.descripcion,alquilerAmostrar.codigoDeCliente,alquilerAmostrar.fecha.dia,alquilerAmostrar.fecha.mes,alquilerAmostrar.fecha.anio,auxName);
     }
 //
     void mostrarAlquileres2(eAlquileres arraydealquileres[], int tama,eClientes arrayDeClientes[],int tamc,eJuegos arrayDeJuegos[],int tamj)
@@ -379,11 +401,13 @@ void clientesQueNoAlquilan(eAlquileres arrayDeAlquileres[], int tama,eClientes a
 
         system("cls");
 
+        char auxName[50];
+
         for(int i=0; i < tama; i++)
         {
             if( arraydealquileres[i].isEmpty == 0)
             {
-                mostrarAlquiler2(arraydealquileres[i],arrayDeClientes[i],arrayDeJuegos[i]);
+                mostrarAlquiler2(arraydealquileres[i],arrayDeClientes[i],arrayDeJuegos[i],auxName);
                 flag = 1;
             }
         }
@@ -394,6 +418,55 @@ void clientesQueNoAlquilan(eAlquileres arrayDeAlquileres[], int tama,eClientes a
         }
         printf("\n\n");
     }
+//
+   void mostrarPrueba1(eAlquileres arraydealquileres[], int tama,eClientes arrayDeClientes[],int tamc,eJuegos arrayDeJuegos[],int tamj)
+    {
+        int flag = 0;
+
+        system("cls");
+
+        for(int i=0; i < tama; i++)
+        {
+            if( arraydealquileres[i].isEmpty == 0)
+            {
+
+                mostrarPrueba2(arraydealquileres[i],arrayDeClientes,tamc,arrayDeJuegos,tamj);
+
+                flag = 1;
+            }
+        }
+
+        if(flag == 0)
+        {
+            printf("No hay alquileres cargados");
+        }
+        printf("\n\n");
+    }
+//
+    void mostrarPrueba2 (eAlquileres alquilerAmostrar, eClientes arrayDeClientes[],int tamc,eJuegos arrayDeJuegos[],int tamj)
+    {
+        int indice1;
+        int indice2;
+        char auxName[25];
+        eClientes clienteAmostrar;
+        eJuegos juegoAmostrar;
+        obtenerNombreCliente(arrayDeClientes,tamc,alquilerAmostrar.codigoDeCliente,auxName);
+        indice1=buscarCliente(arrayDeClientes,tamc,alquilerAmostrar.codigoDeCliente);
+        indice2=buscarJuego(arrayDeJuegos,tamj,alquilerAmostrar.codigoDeJuego);
+
+        juegoAmostrar=arrayDeJuegos[indice2];
+        clienteAmostrar=arrayDeClientes[indice1];
+
+        printf("\nCodigo de alquiler: %d\n",alquilerAmostrar.codigoDeAlquiler);
+        printf("Codigo de juego: %d\n",juegoAmostrar.codigo);
+        printf("Descripcion del juego: %s\n",juegoAmostrar.descripcion);
+        printf("Codigo de cliente: %d\n",clienteAmostrar.codigoCliente);
+        printf("Nombre del cliente: %s\n",clienteAmostrar.nombre);
+        printf("Fecha: %02d/%02d/%d\n",alquilerAmostrar.fecha.dia,alquilerAmostrar.fecha.mes,alquilerAmostrar.fecha.anio);
+
+    }
+
+
 // a terminar //
     /*
 

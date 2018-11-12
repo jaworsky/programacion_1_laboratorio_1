@@ -5,6 +5,7 @@
 #include "clientes.h"
 #include "juegos.h"
 #include "alquileres.h"
+#include "informes.h"
 
 
 void inicializarJuegos (eJuegos arrayDeJuegos[], int tamj)
@@ -47,7 +48,11 @@ void listarJuegos(eJuegos arraydejuegos[], int tamj)
     printf("Descripcion\n\n");
     for(int i=0; i< tamj; i++)
     {
-        printf("codigo: %d descpripcion: %10s \n ID Categoria: %d importe: %d \n\n", arraydejuegos[i].codigo, arraydejuegos[i].descripcion,arraydejuegos[i].idCategoria,arraydejuegos[i].importe);
+        if(arraydejuegos[i].isEmpty==0)
+        {
+           printf("codigo: %d descpripcion: %10s \n ID Categoria: %d importe: %d \n\n", arraydejuegos[i].codigo, arraydejuegos[i].descripcion,arraydejuegos[i].idCategoria,arraydejuegos[i].importe);
+
+        }
     }
     printf("\n\n");
 }
@@ -90,31 +95,33 @@ void altaJuegos(eJuegos arrayDeJuegos[], int tamj)
     else
     {
 
-            while(!function_getInt2("Ingrese el codigo del juego: \n",auxCodigo))
-            {
-                printf("Recuerde, el codigo debe tener solo numeros.\n");
-            }
+            auxCodigo=function_getInt("Ingrese el codigo del juego: \n");
 
             while(!function_getStringLetras("Ingrese la descripcion del juego: \n",auxDescripcion))
             {
                 printf("Recuerde, ingresar la descripcion con letras\n");
             }
 
+            auxIdCategoria=function_getInt("Ingrese el ID de la categoria a la cual pertenece: \n");
+
+            /*
             while(!function_getInt2("Ingrese el ID de la categoria a la cual pertenece: \n",auxIdCategoria))
             {
                 printf("Recuerde, el ID de la categoria es numerico.\n");
             }
+
             while(!function_getInt2("Ingrese el importe del juego: \n",auxImporte))
             {
                 printf("Recuerde, el importe debe numerico.\n");
             }
-
+            */
+            auxImporte=function_getInt("Ingrese el importe del juego: ");
 
             fflush(stdin);
-            strcpy(nuevoJuego.codigo,auxCodigo);
+            nuevoJuego.codigo=auxCodigo;
             strcpy(nuevoJuego.descripcion,auxDescripcion);
-            strcpy(nuevoJuego.idCategoria,auxIdCategoria);
-            strcpy(nuevoJuego.importe,auxImporte);
+            nuevoJuego.idCategoria=auxIdCategoria;
+            nuevoJuego.importe=auxImporte;
             nuevoJuego.isEmpty=0;
             arrayDeJuegos[indice]=nuevoJuego;
             printf("Juego cargado con exito!!\n");
@@ -156,7 +163,7 @@ void juegosCategoriaMesa(eJuegos arrayDeJuegos[],int tamj)
 //
 void mostrarJuego (eJuegos juegoAmostrar)
 {
-    printf("el id del juego es: %d , la descripcion es: %s , el importe: %d , categoria: %d  \n",juegoAmostrar.codigo,juegoAmostrar.descripcion,juegoAmostrar.idCategoria,juegoAmostrar.importe);
+    printf("el id del juego es: %d , la descripcion es: %s , el importe: %d , categoria: %d  \n",juegoAmostrar.codigo,juegoAmostrar.descripcion,juegoAmostrar.importe,juegoAmostrar.idCategoria);
 }
 
 //
@@ -270,28 +277,23 @@ int auxCategoria;
             break;
 
             case 2:
-            while(!function_getInt2("Ingrese el nuevo importe del juego: \n",auxImporte))
-            {
-                printf("Recuerde, el importe debe ser numerico.\n");
-            }
 
-            strcpy(listado[indice].importe,auxImporte);
+            auxImporte=function_getInt("Ingrese el nuevo importe: \n");
+
+            listado[indice].importe=auxImporte;
             printf("importe modificado con exito!!\n");
 
             break;
 
             case 3:
-            while(!function_getInt2("Ingrese la nueva categoria: \n",auxCategoria))
-            {
-                printf("Error la categoria debe ser numerica.\n");
-            }
-            strcpy(listado[indice].idCategoria,auxCategoria);
+
+            auxCategoria=function_getInt("Ingrese la nueva categoria: \n");
+
+            listado[indice].idCategoria=auxCategoria;
             printf("categoria modificada con exito!!\n");
             break;
 
-
         }
-
 
     }
         else

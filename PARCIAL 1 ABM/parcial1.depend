@@ -176,56 +176,70 @@
 	"validaciones.h"
 	"clientes.h"
 
-1541776317 source:c:\users\xxjotaalap\desktop\prueba\programacion_1_laboratorio_1\parcial 1 abm\alquileres.c
+1542047018 source:c:\users\xxjotaalap\desktop\prueba\programacion_1_laboratorio_1\parcial 1 abm\alquileres.c
 	<stdio.h>
 	<stdlib.h>
 	"validaciones.h"
 	"clientes.h"
 	"alquileres.h"
 	"juegos.h"
+	"informes.h"
 
-1541778256 c:\users\xxjotaalap\desktop\prueba\programacion_1_laboratorio_1\parcial 1 abm\validaciones.h
+1541957754 c:\users\xxjotaalap\desktop\prueba\programacion_1_laboratorio_1\parcial 1 abm\validaciones.h
+	"clientes.h"
+	"validaciones.h"
+	"alquileres.h"
+	"juegos.h"
 
-1541781201 c:\users\xxjotaalap\desktop\prueba\programacion_1_laboratorio_1\parcial 1 abm\clientes.h
+1541957754 c:\users\xxjotaalap\desktop\prueba\programacion_1_laboratorio_1\parcial 1 abm\clientes.h
+	"juegos.h"
 
-1541776908 c:\users\xxjotaalap\desktop\prueba\programacion_1_laboratorio_1\parcial 1 abm\alquileres.h
+1542047104 c:\users\xxjotaalap\desktop\prueba\programacion_1_laboratorio_1\parcial 1 abm\alquileres.h
+	"validaciones.h"
+	"clientes.h"
+	"alquileres.h"
+	"juegos.h"
 
-1541781022 source:c:\users\xxjotaalap\desktop\prueba\programacion_1_laboratorio_1\parcial 1 abm\clientes.c
+1541958430 source:c:\users\xxjotaalap\desktop\prueba\programacion_1_laboratorio_1\parcial 1 abm\clientes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+	"juegos.h"
+	"clientes.h"
+	"alquileres.h"
+	"informes.h"
+
+1542051714 source:c:\users\xxjotaalap\desktop\prueba\programacion_1_laboratorio_1\parcial 1 abm\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"clientes.h"
+	"validaciones.h"
+	"alquileres.h"
+	"juegos.h"
+	"informes.h"
+
+1541958430 source:c:\users\xxjotaalap\desktop\prueba\programacion_1_laboratorio_1\parcial 1 abm\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	"validaciones.h"
+	"clientes.h"
+	"juegos.h"
+	"alquileres.h"
+	"informes.h"
+
+1542046457 source:c:\users\xxjotaalap\desktop\prueba\programacion_1_laboratorio_1\parcial 1 abm\juegos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"validaciones.h"
 	"clientes.h"
-	"alquileres.h"
-	"juegos.h"
-
-1541781340 source:c:\users\xxjotaalap\desktop\prueba\programacion_1_laboratorio_1\parcial 1 abm\main.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	"clientes.h"
-	"validaciones.h"
-	"alquileres.h"
-	"juegos.h"
-
-1541778240 source:c:\users\xxjotaalap\desktop\prueba\programacion_1_laboratorio_1\parcial 1 abm\validaciones.c
-	<stdio.h>
-	<stdlib.h>
-	"validaciones.h"
-	"clientes.h"
 	"juegos.h"
 	"alquileres.h"
+	"informes.h"
 
-1541780586 source:c:\users\xxjotaalap\desktop\prueba\programacion_1_laboratorio_1\parcial 1 abm\juegos.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	"validaciones.h"
-	"clientes.h"
-	"juegos.h"
-	"alquileres.h"
-
-1541777054 c:\users\xxjotaalap\desktop\prueba\programacion_1_laboratorio_1\parcial 1 abm\juegos.h
+1541957754 c:\users\xxjotaalap\desktop\prueba\programacion_1_laboratorio_1\parcial 1 abm\juegos.h
 
 1541809128 source:c:\users\alumno\desktop\programacion_1_laboratorio_1\parcial 1 abm\alquileres.c
 	<stdio.h>
@@ -295,4 +309,6 @@
 	"clientes.h"
 	"alquileres.h"
 	"juegos.h"
+
+1541958379 c:\users\xxjotaalap\desktop\prueba\programacion_1_laboratorio_1\parcial 1 abm\informes.h
 
