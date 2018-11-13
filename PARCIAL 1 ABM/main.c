@@ -35,6 +35,8 @@ int main()
     inicializarAlquileres(listaDeAlquileres,TAMA);
     inicializarClientes(listaDeClientes,TAMC);
 
+    eMarca marcas[]={{1,"Ditoys"},{2,"Vulcanita"},{3,"Yetem"},{4,"Ruibal"},{5,"TopToys"}};
+
     cargarCategorias(listaDeCategorias,TAMCAT);
     hardCordearJuegos(listaDeJuegos, TAMJ);
     hardCordearClientes(listaDeClientes,TAMC);
@@ -80,7 +82,7 @@ int main()
 
         case 4://listar
             listarCategorias(listaDeCategorias,5);
-            listarJuegos(listaDeJuegos,TAMJ);
+            listarJuegos2(listaDeJuegos,TAMJ,marcas,5,listaDeCategorias,TAMCAT);
             ordenarClientesPorSexoYnombre(listaDeClientes,TAMC);
             mostrarClientes(listaDeClientes,TAMC);
             system("pause");
@@ -89,7 +91,7 @@ int main()
 
         case 5: //Alquileres
 
-            altaAlquiler(listaDeAlquileres,TAMA,listaDeClientes,TAMC,listaDeJuegos,TAMJ,listaDeCategorias,TAMCAT,&codigoAlquierAuto);
+            altaAlquiler(listaDeAlquileres,TAMA,listaDeClientes,TAMC,listaDeJuegos,TAMJ,listaDeCategorias,TAMCAT,&codigoAlquierAuto,marcas,5);
             flagAlquiler=1;
             printf("Alquier cargado con exito!\n");
             system("pause");
@@ -137,7 +139,7 @@ int main()
             break;
 
         case 12: //jeugos de categoria mesa
-            listarJuegos(listaDeJuegos,TAMJ);
+            listarJuegos(listaDeJuegos,TAMJ,marcas,5);
             juegosCategoriaMesa(listaDeJuegos,TAMJ);
             system("pause");
             break;
@@ -166,6 +168,25 @@ int main()
         case 16:
 
             clientesQueNoAlquilan(listaDeAlquileres,TAMA,listaDeClientes,TAMC);
+
+            break;
+
+        case 17:
+
+            //listarJuegos(listaDeJuegos,TAMJ,marcas,5);
+            juegosDeUnaDeterminadaMarca(listaDeJuegos,TAMJ,marcas,5);
+
+            break;
+
+        case 18:
+
+            cuantosClientesDeMarca3(listaDeAlquileres,TAMA,listaDeClientes,TAMC,listaDeJuegos,TAMJ,marcas,5);
+
+            break;
+
+        case 19:
+
+            cuantosClientesDeMarca(listaDeAlquileres,TAMA,listaDeClientes,TAMC,listaDeJuegos,TAMJ,marcas,5);
 
             break;
 
@@ -201,12 +222,18 @@ int menu()
         printf("9-Alta Juegos\n");
         printf("10-Baja Juegos\n");
         printf("11-Modificar Juegos\n");
+
+        printf("\nRecuperatorio:\n\n");
+        /*
         printf("12-Mostrar Juegos de categoria mesa\n");
         printf("13-Mostrar Alquileres por cliente\n");
         printf("14-Mostrar importe por cliente\n");
         printf("15-Mostrar Clientes que alquilaron un determinado juego\n");
         printf("16-Mostrar Clientes que no alquilaron\n");
-
+        */
+        printf("17-Mostrar todos los juegos de una determinada marca\n");
+        printf("18-Cuantos alquileres aparecen juegos de una determinada marca\n");
+        printf("19-Clientes que alquilaron juegos de una determinada marca\n");
 
         printf("30-Salir\n");
 
@@ -305,12 +332,12 @@ void clientesQueNoAlquilan(eAlquileres arrayDeAlquileres[], int tama,eClientes a
 
     }
 //
-    void juegoXcliente(eAlquileres arrayDeAlquileres[], int tama,eClientes arrayDeClientes[],int tamc,eJuegos arrayDeJuegos[],int tamj)
+    void juegoXcliente(eAlquileres arrayDeAlquileres[], int tama,eClientes arrayDeClientes[],int tamc,eJuegos arrayDeJuegos[],int tamj,eMarca arrayDeMarcas[],int tamm)
     {
         int auxCodDeJuego;
         int auxCliente,index;
 
-        listarJuegos(arrayDeJuegos,tamj);
+        listarJuegos(arrayDeJuegos,tamj,arrayDeMarcas,5);
         auxCodDeJuego=function_getInt("Ingrese el codigo del juego: \n\n");
 
         int flag = 0;
@@ -504,7 +531,7 @@ void clientesQueNoAlquilan(eAlquileres arrayDeAlquileres[], int tama,eClientes a
         int auxCodDeJuego;
         int auxCliente,index;
 
-        listarJuegos(arrayDeJuegos,tamj);
+       // listarJuegos(arrayDeJuegos,tamj,arrayDeMarcas,5);
         auxCodDeJuego=function_getInt("Ingrese el codigo del juego: \n\n");
 
         system("cls");

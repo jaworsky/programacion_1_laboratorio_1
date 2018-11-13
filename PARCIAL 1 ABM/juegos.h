@@ -17,14 +17,22 @@ int codigo;
 char descripcion[51];
 int importe;
 int idCategoria;
+int marca;
 int isEmpty;
 
 }eJuegos;
 
 
+typedef struct
+{
+    int idMarca;
+    char nombre[20];
+}eMarca;
+
+
 void hardCordearJuegos(eJuegos juegos[], int tamjuegos);
 
-void listarJuegos(eJuegos arraydejuegos[], int tamj);
+void listarJuegos(eJuegos arraydejuegos[], int tamj,eMarca arrayDeMarcas[],int tamm);
 
 void inicializarJuegos (eJuegos arrayDeJuegos[], int tamj);
 

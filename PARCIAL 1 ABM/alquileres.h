@@ -32,6 +32,6 @@ void mostrarAlquileres(eAlquileres arraydealquileres[], int tama);
 
 void mostrarAlquiler (eAlquileres alquilerAmostrar);
 
-void altaAlquiler(eAlquileres arraydealquileres[],int tama ,eClientes arraydeclientes[], int tamc,eJuegos arraydejuegos[],int tamj,eCategoria arraydecategorias[],int tamcat, int* pId);
+void altaAlquiler(eAlquileres arraydealquileres[],int tama ,eClientes arraydeclientes[], int tamc,eJuegos arraydejuegos[],int tamj,eCategoria arraydecategorias[],int tamcat, int* pId,eMarca marcas[], int tamm);
 
 #endif // ALQUILERES_H_INCLUDED

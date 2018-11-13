@@ -57,7 +57,7 @@ void mostrarAlquiler (eAlquileres alquilerAmostrar)
     printf("%d ,       %d ,                %d ,     %02d/%02d/%d\n",alquilerAmostrar.codigoDeAlquiler,alquilerAmostrar.codigoDeJuego,alquilerAmostrar.codigoDeCliente,alquilerAmostrar.fecha.dia,alquilerAmostrar.fecha.mes,alquilerAmostrar.fecha.anio);
 }
 //
-void altaAlquiler(eAlquileres arraydealquileres[],int tama ,eClientes arraydeclientes[], int tamc,eJuegos arraydejuegos[],int tamj,eCategoria arraydecategorias[],int tamcat, int* pId)
+void altaAlquiler(eAlquileres arraydealquileres[],int tama ,eClientes arraydeclientes[], int tamc,eJuegos arraydejuegos[],int tamj,eCategoria arraydecategorias[],int tamcat, int* pId,eMarca marcas[],int tamm)
 {
     int idAlquiler=*pId;
     int indice;
@@ -81,7 +81,7 @@ void altaAlquiler(eAlquileres arraydealquileres[],int tama ,eClientes arraydecli
     else
     {
 
-        listarJuegos(arraydejuegos,tamj);
+        listarJuegos(arraydejuegos,tamj,marcas,tamm);
         auxCodJuego=function_getInt("Ingrese el codigo de juego: \n");
         nuevoAlquiler.codigoDeJuego=auxCodJuego;
         mostrarClientes(arraydeclientes,tamc);
