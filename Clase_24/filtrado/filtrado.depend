@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1542413411 source:c:\users\alumno\desktop\filtrado\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1542024220 c:\users\alumno\desktop\filtrado\linkedlist.h
+
